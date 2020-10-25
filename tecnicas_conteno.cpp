@@ -39,7 +39,7 @@ int main(int argc, char const *argv[])
 
 	}
 
-	if (option == 1)
+	if (option == 2)
 	{	
 		cout << "you give the value of n: "; cin >> n;
 		cout << "you give the value of r: "; cin >> r;
@@ -54,7 +54,7 @@ int main(int argc, char const *argv[])
 
 void combination(int n, int r){
 
-	int Vari = 0, Facto1 = 1, Facto3 = 1, R1 = 0;
+	int Vari = 0, Facto1 = 1, Facto3 = 1, R1 = 0, Facto4 = 1;
 
 	R1 = n - r;
 
@@ -66,15 +66,19 @@ void combination(int n, int r){
 
 	}
 
+	while(Facto4 > 1){
+		Facto4 = Facto4*r;
+		r = r - 1;
+	}
 
-	while(R1 != 1 or R1 != 0){
+	while(R1 > 1){
 
-		Facto3 = Facto3*n;
+		Facto3 = Facto3*R1;
 		R1 = R1 - 1;
 
 	}
 
-	Vari = Facto1/(r*Facto3);
+	Vari = Facto1/(Facto4*Facto3);
 
 	cout << "combination: " << Vari << endl; 
 
@@ -119,7 +123,7 @@ void variation(int n, int r){
 
 	while(R > 1){
 
-		Facto2 = Facto2*n;
+		Facto2 = Facto2*R;
 		R = R - 1;
 
 	}
