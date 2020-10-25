@@ -14,23 +14,22 @@ void variation(int, int);
 int main(int argc, char const *argv[])
 {
 
-	int n, r;
-	char option[4], option2[4];
+	int n, r, option, option2;
 
 	cout <<  "1. yes 2. no " << endl;
 	cout << "Matter order?: "; cin >> option;
 
-	if (option == "YES" or option == "yes")
+	if (option == 1)
 	{
 		cout << "all elements?: "; cin >> option2;
 
-		if (option2 == "YES" or option2 == "yes" or option == "Yes")
+		if (option2 == 1)
 		{
 			cout << "you give the value of n: "; cin >> n;
 			permutation(n);
 		}
 
-		if(option2 == "NO" or option2 == "no" or option == "No"){
+		if(option2 == 2){
 
 			cout << "you give the value of n: "; cin >> n;
 			cout << "you give the value of r: "; cin >> r;
@@ -39,7 +38,7 @@ int main(int argc, char const *argv[])
 
 	}
 
-	if (option == "NO" or option == "no" or option == "No")
+	if (option == 1)
 	{	
 		cout << "you give the value of n: "; cin >> n;
 		cout << "you give the value of r: "; cin >> r;
