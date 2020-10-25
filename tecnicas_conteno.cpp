@@ -15,29 +15,34 @@ int main(int argc, char const *argv[])
 {
 
 	int n, r;
-	char option[10], option2[10];
+	char option[4], option2[4];
 
+	cout <<  "1. yes 2. no " << endl;
 	cout << "Matter order?: "; cin >> option;
 
 	if (option == "YES" or option == "yes")
 	{
 		cout << "all elements?: "; cin >> option2;
 
-		if (option2 == "YES" or option2 == "yes")
+		if (option2 == "YES" or option2 == "yes" or option == "Yes")
 		{
+			cout << "you give the value of n: "; cin >> n;
 			permutation(n);
 		}
 
-		else{
+		if(option2 == "NO" or option2 == "no" or option == "No"){
 
+			cout << "you give the value of n: "; cin >> n;
+			cout << "you give the value of r: "; cin >> r;
 			variation(n, r);
 		}
 
 	}
 
-	if (option == "NO" or option == "no")
+	if (option == "NO" or option == "no" or option == "No")
 	{	
-
+		cout << "you give the value of n: "; cin >> n;
+		cout << "you give the value of r: "; cin >> r;
 		combination(n, r);
 
 	}
@@ -49,22 +54,24 @@ int main(int argc, char const *argv[])
 
 void combination(int n, int r){
 
-	int Vari = 0, Facto1 = 1, Facto3 = 1, R = 0;
+	int Vari = 0, Facto1 = 1, Facto3 = 1, R1 = 0;
 
-	R = n - r;
+	R1 = n - r;
 
 
-	while(n != 1 or n != 0){
+	while(n > 1){
 
-		n = n - 1;
 		Facto1 = Facto1*n;
+		n = n - 1;
+
 	}
 
 
-	while(R != 1 or R != 0){
+	while(R1 != 1 or R1 != 0){
 
-		R = R - 1;
 		Facto3 = Facto3*n;
+		R1 = R1 - 1;
+
 	}
 
 	Vari = Facto1/(r*Facto3);
@@ -80,11 +87,12 @@ void permutation(int n){
 
 	int Fact = 1;
 
-	while(n != 1 or n != 0){
+	while(n > 1){
 
-		n = n - 1;
 
 		Fact = Fact*n;
+		n = n - 1;
+
 	}
 
 	cout << "Permutation: " << Fact << endl;
@@ -101,17 +109,19 @@ void variation(int n, int r){
 	R = n - r;
 
 
-	while(n != 1 or n != 0){
+	while(n > 1){
 
-		n = n - 1;
 		Facto = Facto*n;
+		n = n - 1;
+
 	}
 
 
-	while(R != 1 or R != 0){
+	while(R > 1){
 
-		R = R - 1;
 		Facto2 = Facto2*n;
+		R = R - 1;
+
 	}
 
 	Var = Facto/Facto2;
