@@ -31,6 +31,7 @@ int main(int argc, char const *argv[])
 
 		if(option2 == 2){
 
+
 			cout << "you give the value of n: "; cin >> n;
 			cout << "you give the value of r: "; cin >> r;
 			variation(n, r);
