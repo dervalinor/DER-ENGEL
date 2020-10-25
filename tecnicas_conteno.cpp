@@ -66,7 +66,7 @@ void combination(int n, int r){
 
 	}
 
-	while(Facto4 > 1){
+	while(r > 0){
 		Facto4 = Facto4*r;
 		r = r - 1;
 	}
