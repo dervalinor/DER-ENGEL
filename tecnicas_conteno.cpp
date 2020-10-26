@@ -6,15 +6,15 @@ variation according to the case */
 
 using namespace std;
 
-void combination(int, int);
-void permutation(int);
-void variation(int, int);
+void combination(double, double);
+void permutation(double);
+void variation(double, double);
 
 
 int main(int argc, char const *argv[])
 {
 
-	int n, r, option, option2;
+	double n, r, option, option2;
 
 	cout <<  "1. yes 2. no " << endl;
 	cout << "Matter order?: "; cin >> option;
@@ -52,14 +52,14 @@ int main(int argc, char const *argv[])
 
 
 
-void combination(int n, int r){
+void combination(double n, double r){
 
-	int Vari = 0, Facto1 = 1, Facto3 = 1, R1 = 0, Facto4 = 1;
+	double Vari = 0, Facto1 = 1, Facto3 = 1, R1 = 0, Facto4 = 1;
 
 	R1 = n - r;
 
 
-	while(n > 1){
+	while(n > 0){
 
 		Facto1 = Facto1*n;
 		n = n - 1;
@@ -71,14 +71,14 @@ void combination(int n, int r){
 		r = r - 1;
 	}
 
-	while(R1 > 1){
+	while(R1 > 0){
 
 		Facto3 = Facto3*R1;
 		R1 = R1 - 1;
 
 	}
 
-	Vari = Facto1/(Facto4*Facto3);
+	Vari = (Facto1)/(Facto4*Facto3);
 
 	cout << "combination: " << Vari << endl; 
 
@@ -87,9 +87,9 @@ void combination(int n, int r){
 
 
 
-void permutation(int n){
+void permutation(double n){
 
-	int Fact = 1;
+	double Fact = 1;
 
 	while(n > 1){
 
@@ -106,9 +106,9 @@ void permutation(int n){
 
 
 
-void variation(int n, int r){
+void variation(double n, double r){
 
-	int Var = 0, Facto = 1, Facto2 = 1, R = 0;
+	double Var = 0, Facto = 1, Facto2 = 1, R = 0;
 
 	R = n - r;
 

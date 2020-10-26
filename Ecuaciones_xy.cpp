@@ -12,7 +12,7 @@ using namespace std;
 int main(int argc, char const *argv[])
 {
 	
-	float a, b, c, d, e, f, option; //writen as float for have error in the number
+	float a, b, c, d, e, f, option; //writen as float for have not error in the number
 	double X, Y, D, E;
 
 	cout << "Program for test and find solve of two equations " << endl;
