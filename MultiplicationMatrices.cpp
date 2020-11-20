@@ -90,14 +90,16 @@ void ask(){
 			}
 		}
 
-		if (row1 == 1 or row2 == 1 or col1 == 1 or col2 == 1)
-		{
-			vektor_matrix(matrix1, matrix2, row1, row2, col1, col2);
-		}
 
 		if (row1 > 1 and row2 > 1 and col1 > 1 and col2 > 2)
 		{
 			mult_matrix(matrix1, matrix2, row1, row2, col1, col2);
+		}
+
+		else{
+
+			vektor_matrix(matrix1, matrix2, row1, row2, col1, col2);
+
 		}
 
 	}
@@ -157,5 +159,70 @@ void mult_matrix(int **matrix1, int **matrix2, int row1, int row2, int col1, int
 		}
 
 	}
+
+}
+
+void vektor_matrix(int **matrix1, int **matrix2, int row1, int row2, int col1, int col2){
+
+	int a, b, c = 0, m = 0;
+
+	if (row1 == 1 and col2 == 1)
+	{
+		for (int i = 0; i < col1; ++i)
+		{
+			a = *(*(matrix1 + 0) + i);
+			b = *(*(matrix2 + i) + 0);
+
+			c = c + a*b;
+		}
+
+		cout << "\nResult: " << c << endl;
+	}
+
+	if (col2 == 1)
+	{
+
+					
+		//correction make constant column
+
+		cout << "\nResult: " << endl;
+
+		for (int i = 0; i < col2; ++i)
+		{
+			
+
+
+					//Yess, all the element of the matrix for column constant
+					for (int k = 0; k < row1; ++k)
+					{
+						for (int l = 0; l < col1; ++l) 
+						{
+
+
+							a = *(*(matrix1 + k) + l);
+							b = *(*(matrix2 + l) + 0);
+
+							c = c + a*b;
+							m = m + 1;
+
+							if (m == col1)
+							{
+								cout << c << " " << endl; 
+								c = 0;
+								m = 0;
+							}
+
+						}
+					}
+
+
+
+		}
+
+
+
+
+	}
+	
 
 }
