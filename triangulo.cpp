@@ -22,7 +22,7 @@ void ask(){
 
 	int option, option1;
 
-	cout << "Triangle \n";
+	cout << "Triangle Rectangle\n";
 	cout << "\n1. find the side or hipotenuse \n";
 	cout << "2. find side or hipotenuse with angle \n";
 	cout << "3. find side or hipotenuse with two angle \n";
@@ -106,7 +106,6 @@ void cateto(double side1, double side2, int option1){
 	if (option1 == 1)
 	{
 		A = sqrt(pow(side1, 2) - pow(side2, 2));
-		cout << "A = raiz(" << pow(side1, 2) << "-" << pow(side2, 2) << ")" << endl;
 		cout << "Side: " << A;
 	}
 	else
@@ -134,7 +133,6 @@ void angulo(double side1, double angle1, int option1){
 	{
 
 		A = side1/tan(ANGLE1);
-		cout << side1 << "/tan(" << angle1 << ")" << endl;
 		B = side1/sin(ANGLE1);
 		cout << "Side adjecent: " << A << endl;
 		cout << "Hipotenuse: " << B << endl;
