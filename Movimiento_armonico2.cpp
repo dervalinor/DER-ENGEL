@@ -8,12 +8,12 @@ void periodo_f(double);
 void frecuencia_p(double);
 void periodo_w(double, double);
 void frecuencia_w(double, double);
-void posicion(double, double, double);
-void velocidad(double, double, double);
-void aceleracion(double, double, double);
+void posicion(double, double, double, double);
+void velocidad(double, double, double, double);
+void aceleracion(double, double, double, double);
 
 int opt, opt2;
-double fr, w, p, X;
+double fr, w, p, X, m, k, H, t, ph;
 const double PI = 3.141592654;
 
 int main(int argc, char const *argv[])
@@ -100,7 +100,7 @@ void periodo_f(double fr){
 }
 
 void frecuencia_p(double p){
-	f = 1/p;
+	fr = 1/p;
 }
 
 void periodo_w(double m, double k){
@@ -146,5 +146,4 @@ void aceleracion(double H, double w, double t, double ph){
 	cout << "a = " << - H << "(" << w << ")**2" << "*cos(" << w << "*" << t << "+" << ph << ")" << endl;
 	cout << "a = " << - H << "*" << pow(w, 2) << "*cos(" << w*t + ph << ")" << endl;
 	cout << "Acceleration is: " << X << endl;
-
 }
